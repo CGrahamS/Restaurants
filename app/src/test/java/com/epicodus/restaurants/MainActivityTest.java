@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.widget.TextView;
 
-import org.apache.tools.ant.Main;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
