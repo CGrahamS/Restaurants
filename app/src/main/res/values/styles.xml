@@ -12,6 +12,10 @@
         <item name="android:textSize">40sp</item>
     </style>
 
+    <style name="MedFont">
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="CustomButton" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button</item>
     </style>
