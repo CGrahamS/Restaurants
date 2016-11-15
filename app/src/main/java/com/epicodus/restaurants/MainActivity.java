@@ -6,17 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mZipSubmit;
-    private EditText mZipInput;
+    @Bind(R.id.zipSubmit) Button mZipSubmit;
+    @Bind(R.id.zipInput) EditText mZipInput;
+    @Bind(R.id.appHeader) TextView mAppHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mZipInput = (EditText) findViewById(R.id.zipInput);
-        mZipSubmit = (Button) findViewById(R.id.zipSubmit);
+        ButterKnife.bind(this);
+
         mZipSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
