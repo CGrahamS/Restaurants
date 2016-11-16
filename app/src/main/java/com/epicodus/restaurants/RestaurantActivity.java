@@ -39,7 +39,6 @@ public class RestaurantActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String restaurant = ((TextView)view).getText().toString();
                 Toast.makeText(RestaurantActivity.this, restaurant, Toast.LENGTH_LONG).show();
-                Log.v(TAG, restaurant);
             }
         });
 
@@ -47,6 +46,5 @@ public class RestaurantActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
         String formattedDisplayText = String.format(mDisplayText, location);
         mRestaurantDisplayText.setText(formattedDisplayText);
-        Log.d(TAG, "In the onCreate method!");
     }
 }
