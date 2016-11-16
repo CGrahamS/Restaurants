@@ -31,7 +31,7 @@ public class RestaurantActivity extends AppCompatActivity {
         mDisplayText = getString(R.string.restaurant_display_text);
 
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
+        ArrayAdapter adapter = new ArrayAdapter(RestaurantActivity.this, android.R.layout.simple_list_item_1, restaurants);
         mRestaurantList.setAdapter(adapter);
 
         mRestaurantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,7 +45,8 @@ public class RestaurantActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mRestaurantDisplayText.setText(mDisplayText + " " + location + ":");
+        String formattedDisplayText = String.format(mDisplayText, location);
+        mRestaurantDisplayText.setText(formattedDisplayText);
         Log.d(TAG, "In the onCreate method!");
     }
 }
