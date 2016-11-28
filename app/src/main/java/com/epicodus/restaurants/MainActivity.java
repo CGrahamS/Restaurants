@@ -11,7 +11,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.zipSubmit) Button mZipSubmit;
     @Bind(R.id.zipInput) EditText mZipInput;
     @Bind(R.id.appHeader) TextView mAppHeader;
@@ -22,14 +22,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mZipSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String location = mZipInput.getText().toString();
-                Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
-                intent.putExtra("location", location);
-                startActivity(intent);
-            }
-        });
+        mZipSubmit.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mZipSubmit) {
+            String location = mZipInput.getText().toString();
+            Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+            intent.putExtra("location", location);
+            startActivity(intent);
+        }
+
     }
 }
