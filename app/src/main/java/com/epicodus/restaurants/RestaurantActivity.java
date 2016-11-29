@@ -11,8 +11,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class RestaurantActivity extends AppCompatActivity {
     @Bind(R.id.restaurantDisplayText) TextView mRestaurantDisplayText;
@@ -46,5 +51,27 @@ public class RestaurantActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
         String formattedDisplayText = String.format(mDisplayText, location);
         mRestaurantDisplayText.setText(formattedDisplayText);
+        getRestaurants(location);
+    }
+
+    private void getRestaurants(String location) {
+        final YelpService yelpService = new YelpService();
+        yelpService.findRestaurants(location, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }
