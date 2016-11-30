@@ -34,7 +34,9 @@
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_above="@+id/zipSubmit"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:singleLine="true"
+        android:imeOptions="actionDone"/>
 
     <Button
         style="@style/CustomButton"

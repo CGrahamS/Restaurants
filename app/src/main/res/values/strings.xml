@@ -5,4 +5,7 @@
     <string name="input_hint">Enter Zip Code</string>
     <string name="restaurant_display_text">These are the restaurants nearest to %1$s:</string>
     <string name="restaurant_list">Restaurant List:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
