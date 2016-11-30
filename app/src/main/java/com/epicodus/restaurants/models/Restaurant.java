@@ -1,10 +1,13 @@
 package com.epicodus.restaurants.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
 /**
  * Created by CGrahamS on 11/29/16.
  */
+@Parcel
 public class Restaurant {
     private String mName;
     private String mPhone;
@@ -15,6 +18,8 @@ public class Restaurant {
     private double mLatitude;
     private double mLongitue;
     private ArrayList<String> mCategories = new ArrayList<>();
+
+    public Restaurant() {}
 
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
