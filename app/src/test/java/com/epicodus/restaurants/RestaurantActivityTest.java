@@ -3,6 +3,8 @@ package com.epicodus.restaurants;
 import android.os.Build;
 import android.widget.ListView;
 
+import com.epicodus.restaurants.ui.RestaurantActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
